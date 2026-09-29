@@ -1,2135 +1,413 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>RH Solutions | Energie voor zelfstandigen & KMO's</title>
-
-<meta name="description" content="RH Solutions helpt zelfstandigen en KMO's met energie. Bezorg vrijblijvend je document en ontdek wat mogelijk is.">
-<meta name="theme-color" content="#009b55">
-
-<style>
-:root{
-  --green:#009b55;
-  --green-dark:#007d45;
-  --green-light:#eaf8f1;
-  --green-soft:#f3fbf7;
-  --black:#111;
-  --dark:#171717;
-  --white:#fff;
-  --grey:#66706b;
-  --light-grey:#f5f7f6;
-  --border:#dfe7e3;
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
-  color:var(--black);
-  line-height:1.5;
-  overflow-x:hidden;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  color:inherit;
-}
-
-/* HEADER */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(0,0,0,.07);
-}
-
-.nav{
-  max-width:1180px;
-  margin:auto;
-  min-height:78px;
-  padding:0 25px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-
-.brand-mark{
-  width:48px;
-  height:48px;
-  border-radius:12px;
-  background:var(--black);
-  color:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:-2px;
-}
-
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1;
-}
-
-.brand-name{
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:-.5px;
-}
-
-.brand-name span{
-  color:var(--green);
-}
-
-.brand-tagline{
-  margin-top:5px;
-  font-size:9px;
-  letter-spacing:3px;
-  color:var(--green);
-  font-weight:700;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
-  font-size:14px;
-  font-weight:700;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:var(--dark);
-}
-
-.nav-links a:hover{
-  color:var(--green);
-}
-
-.nav-button{
-  text-decoration:none;
-  background:var(--green);
-  color:white;
-  padding:12px 19px;
-  border-radius:8px;
-  font-weight:800;
-  font-size:14px;
-  transition:.2s ease;
-}
-
-.nav-button:hover{
-  background:var(--green-dark);
-  transform:translateY(-1px);
-}
-
-/* HERO */
-
-.hero{
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 90% 20%,rgba(0,155,85,.13),transparent 34%),
-    linear-gradient(135deg,#fff 0%,#fff 58%,#f0faf5 100%);
-  padding:85px 25px 100px;
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  width:480px;
-  height:480px;
-  right:-230px;
-  top:-220px;
-  border:75px solid rgba(0,155,85,.06);
-  border-radius:50%;
-}
-
-.hero-container{
-  max-width:1180px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  align-items:center;
-  gap:70px;
-  position:relative;
-  z-index:1;
-}
-
-.hero-content{
-  max-width:680px;
-}
-
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 13px;
-  background:var(--green-light);
-  color:var(--green-dark);
-  border-radius:50px;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.7px;
-  margin-bottom:22px;
-}
-
-.eyebrow-dot{
-  width:8px;
-  height:8px;
-  background:var(--green);
-  border-radius:50%;
-}
-
-.hero h1{
-  font-size:clamp(45px,6vw,78px);
-  line-height:.98;
-  letter-spacing:-3px;
-  margin-bottom:25px;
-}
-
-.hero h1 span{
-  color:var(--green);
-}
-
-.hero-subtitle{
-  font-size:21px;
-  line-height:1.55;
-  color:#4f5753;
-  max-width:620px;
-  margin-bottom:32px;
-}
-
-.hero-subtitle strong{
-  color:var(--black);
-}
-
-.hero-buttons{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:13px;
-  margin-bottom:28px;
-}
-
-.primary-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  background:var(--green);
-  color:white;
-  text-decoration:none;
-  padding:16px 24px;
-  border-radius:9px;
-  font-weight:900;
-  font-size:16px;
-  box-shadow:0 12px 30px rgba(0,155,85,.22);
-  transition:.2s ease;
-}
-
-.primary-button:hover{
-  background:var(--green-dark);
-  transform:translateY(-2px);
-}
-
-.secondary-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:white;
-  color:var(--black);
-  text-decoration:none;
-  padding:15px 22px;
-  border:1px solid var(--border);
-  border-radius:9px;
-  font-weight:800;
-  font-size:15px;
-  transition:.2s ease;
-}
-
-.secondary-button:hover{
-  border-color:var(--green);
-  color:var(--green);
-}
-
-.hero-note{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  color:#626a66;
-  font-size:13px;
-  font-weight:600;
-}
-
-.check{
-  width:21px;
-  height:21px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--green-light);
-  color:var(--green);
-  border-radius:50%;
-  font-size:12px;
-  font-weight:900;
-}
-
-/* HERO VISUAL */
-
-.hero-visual{
-  position:relative;
-  min-height:500px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.visual-circle{
-  position:absolute;
-  width:430px;
-  height:430px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#e6f7ee,#fff);
-  border:1px solid rgba(0,155,85,.13);
-  box-shadow:0 30px 80px rgba(0,60,35,.12);
-}
-
-.bulb{
-  position:relative;
-  z-index:2;
-  width:245px;
-  height:245px;
-  border-radius:50%;
-  background:radial-gradient(circle,#fff 0%,#f4fff9 48%,#d9f5e7 100%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:120px;
-  box-shadow:0 20px 60px rgba(0,155,85,.16);
-}
-
-.energy-card{
-  position:absolute;
-  z-index:4;
-  bottom:20px;
-  left:0;
-  background:var(--green);
-  color:white;
-  padding:19px 23px;
-  border-radius:13px;
-  box-shadow:0 20px 45px rgba(0,100,55,.24);
-  transform:rotate(-3deg);
-  max-width:280px;
-}
-
-.energy-card strong{
-  display:block;
-  font-size:20px;
-  line-height:1.1;
-  margin-bottom:5px;
-}
-
-.energy-card span{
-  font-size:13px;
-  opacity:.92;
-}
-
-.floating-card{
-  position:absolute;
-  z-index:5;
-  top:45px;
-  right:0;
-  background:var(--black);
-  color:white;
-  padding:18px 21px;
-  border-radius:13px;
-  box-shadow:0 20px 50px rgba(0,0,0,.18);
-  transform:rotate(3deg);
-}
-
-.floating-card .small{
-  color:#b9c1bd;
-  font-size:11px;
-  font-weight:700;
-}
-
-.floating-card .big{
-  color:var(--green);
-  font-size:27px;
-  font-weight:900;
-}
-
-/* TRUST */
-
-.trust-bar{
-  background:var(--black);
-  color:white;
-  padding:21px 25px;
-}
-
-.trust-inner{
-  max-width:1180px;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:30px;
-}
-
-.trust-item{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  font-size:14px;
-  font-weight:700;
-}
-
-.trust-item span{
-  color:var(--green);
-  font-size:18px;
-}
-
-/* SECTIONS */
-
-.section{
-  padding:90px 25px;
-}
-
-.section-container{
-  max-width:1180px;
-  margin:auto;
-}
-
-.section-heading{
-  max-width:720px;
-  margin-bottom:45px;
-}
-
-.section-heading.center{
-  text-align:center;
-  margin-left:auto;
-  margin-right:auto;
-}
-
-.section-label{
-  color:var(--green);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
-
-.section-heading h2{
-  font-size:clamp(34px,4vw,50px);
-  line-height:1.05;
-  letter-spacing:-1.8px;
-  margin-bottom:14px;
-}
-
-.section-heading p{
-  color:var(--grey);
-  font-size:17px;
-}
-
-/* BENEFITS */
-
-.benefits{
-  background:var(--light-grey);
-}
-
-.benefit-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.benefit{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:32px;
-  box-shadow:0 8px 30px rgba(0,0,0,.035);
-  transition:.2s ease;
-}
-
-.benefit:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 45px rgba(0,60,35,.09);
-  border-color:rgba(0,155,85,.25);
-}
-
-.benefit-icon{
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:var(--green);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  margin-bottom:22px;
-}
-
-.benefit h3{
-  font-size:21px;
-  margin-bottom:9px;
-}
-
-.benefit p{
-  color:var(--grey);
-  font-size:15px;
-}
-
-/* FACTUURCHECK */
-
-.check-section{
-  background:white;
-}
-
-.check-box{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(135deg,#007d45,#00a85d);
-  border-radius:25px;
-  padding:55px;
-  color:white;
-  box-shadow:0 25px 70px rgba(0,100,55,.20);
-  display:grid;
-  grid-template-columns:1fr .8fr;
-  gap:50px;
-  align-items:center;
-}
-
-.check-box:after{
-  content:"";
-  position:absolute;
-  width:370px;
-  height:370px;
-  right:-170px;
-  top:-180px;
-  border:70px solid rgba(255,255,255,.08);
-  border-radius:50%;
-}
-
-.check-content{
-  position:relative;
-  z-index:2;
-}
-
-.check-content .section-label{
-  color:white;
-  opacity:.9;
-}
-
-.check-content h2{
-  font-size:clamp(35px,4vw,52px);
-  line-height:1.02;
-  letter-spacing:-1.7px;
-  margin-bottom:18px;
-}
-
-.check-content p{
-  color:rgba(255,255,255,.9);
-  font-size:17px;
-  max-width:620px;
-  margin-bottom:25px;
-}
-
-.check-button{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background:white;
-  color:var(--green-dark);
-  padding:16px 24px;
-  border-radius:9px;
-  text-decoration:none;
-  font-weight:900;
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.check-button:hover{
-  background:#f5fff9;
-}
-
-.check-points{
-  position:relative;
-  z-index:2;
-  background:rgba(0,0,0,.13);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:18px;
-  padding:27px;
-}
-
-.check-point{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  margin-bottom:18px;
-}
-
-.check-point:last-child{
-  margin-bottom:0;
-}
-
-.check-point-icon{
-  flex-shrink:0;
-  width:27px;
-  height:27px;
-  border-radius:50%;
-  background:white;
-  color:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  font-weight:900;
-}
-
-.check-point strong{
-  display:block;
-  margin-bottom:2px;
-}
-
-.check-point span{
-  display:block;
-  font-size:13px;
-  color:rgba(255,255,255,.82);
-}
-
-/* FORM */
-
-#uploadformulier{
-  background:#f5f7f6;
-}
-
-#energyForm{
-  background:white;
-  padding:32px;
-  border-radius:20px;
-  border:1px solid #dfe7e3;
-  box-shadow:0 15px 45px rgba(0,60,35,.08);
-}
-
-.form-field{
-  margin-bottom:18px;
-}
-
-.form-label{
-  display:block;
-  font-weight:800;
-  margin-bottom:7px;
-}
-
-.form-label span{
-  color:#009b55;
-}
-
-.form-input,
-.form-textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #dfe7e3;
-  border-radius:9px;
-  font-size:16px;
-  outline:none;
-  font-family:inherit;
-}
-
-.form-input:focus,
-.form-textarea:focus{
-  border-color:var(--green);
-  box-shadow:0 0 0 3px rgba(0,155,85,.08);
-}
-
-.form-file{
-  width:100%;
-  padding:11px;
-  border:1px solid #dfe7e3;
-  border-radius:9px;
-  font-size:14px;
-  background:#fafcfa;
-}
-
-.form-textarea{
-  resize:vertical;
-}
-
-.file-message{
-  margin-top:7px;
-  color:#66706b;
-  font-size:12px;
-}
-
-.consent{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  font-size:13px;
-  color:#59625e;
-  margin-bottom:22px;
-}
-
-.consent input{
-  margin-top:3px;
-  accent-color:#009b55;
-  flex-shrink:0;
-}
-
-.submit-button{
-  width:100%;
-  border:0;
-  background:#009b55;
-  color:white;
-  padding:17px;
-  border-radius:9px;
-  font-size:17px;
-  font-weight:900;
-  cursor:pointer;
-  transition:.2s ease;
-}
-
-.submit-button:hover{
-  background:#007d45;
-}
-
-.submit-button:disabled{
-  cursor:wait;
-}
-
-.form-note{
-  text-align:center;
-  color:#7a827e;
-  font-size:11px;
-  margin-top:14px;
-  line-height:1.5;
-}
-
-/* STEPS */
-
-.steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.step{
-  position:relative;
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:32px;
-}
-
-.step-number{
-  width:53px;
-  height:53px;
-  background:var(--black);
-  color:var(--green);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:22px;
-}
-
-.step h3{
-  font-size:21px;
-  margin-bottom:8px;
-}
-
-.step p{
-  color:var(--grey);
-  font-size:15px;
-}
-
-/* AUDIENCE */
-
-.audience{
-  background:var(--light-grey);
-  text-align:center;
-}
-
-.audience-box{
-  max-width:900px;
-  margin:auto;
-  background:white;
-  border:2px solid var(--green);
-  border-radius:22px;
-  padding:48px 30px;
-}
-
-.audience-icon{
-  font-size:45px;
-  margin-bottom:10px;
-}
-
-.audience h2{
-  font-size:38px;
-  margin-bottom:10px;
-  letter-spacing:-1px;
-}
-
-.audience h2 span{
-  color:var(--green);
-}
-
-.audience p{
-  color:var(--grey);
-  max-width:650px;
-  margin:auto;
-  font-size:16px;
-}
-
-/* CONTACT */
-
-.contact{
-  background:var(--black);
-  color:white;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.contact h2{
-  font-size:clamp(36px,4vw,52px);
-  line-height:1.05;
-  letter-spacing:-1.5px;
-  margin-bottom:15px;
-}
-
-.contact h2 span{
-  color:var(--green);
-}
-
-.contact-text{
-  color:#b8bfbc;
-  font-size:16px;
-  max-width:570px;
-}
-
-.contact-card{
-  background:#1d1d1d;
-  border:1px solid #303532;
-  border-radius:18px;
-  padding:30px;
-}
-
-.contact-row{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:17px 0;
-  border-bottom:1px solid #303532;
-}
-
-.contact-row:last-child{
-  border-bottom:none;
-  padding-bottom:0;
-}
-
-.contact-row:first-child{
-  padding-top:0;
-}
-
-.contact-icon{
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:var(--green);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:19px;
-  flex-shrink:0;
-}
-
-.contact-row small{
-  display:block;
-  color:#929b96;
-  font-size:11px;
-  margin-bottom:2px;
-}
-
-.contact-row a,
-.contact-row div{
-  color:white;
-  text-decoration:none;
-  font-weight:800;
-}
-
-.contact-row a:hover{
-  color:var(--green);
-}
-
-/* FOOTER */
-
-footer{
-  background:#080808;
-  color:#7e8782;
-  padding:30px 25px;
-  font-size:13px;
-}
-
-.footer-inner{
-  max-width:1180px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.footer-brand{
-  color:white;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.footer-brand span{
-  color:var(--green);
-}
-
-.footer-links{
-  display:flex;
-  gap:20px;
-}
-
-.footer-links a{
-  color:#8e9692;
-  text-decoration:none;
-}
-
-.footer-links a:hover{
-  color:var(--green);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:950px){
-
-  .hero-container{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-
-  .hero-content{
-    max-width:760px;
-  }
-
-  .hero-visual{
-    min-height:400px;
-  }
-
-  .benefit-grid,
-  .steps{
-    grid-template-columns:1fr;
-  }
-
-  .check-box{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:680px){
-
-  .nav{
-    min-height:68px;
-    padding:0 17px;
-  }
-
-  .brand-mark{
-    width:42px;
-    height:42px;
-  }
-
-  .brand-name{
-    font-size:18px;
-  }
-
-  .brand-tagline{
-    font-size:7px;
-    letter-spacing:2px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .nav-button{
-    padding:10px 13px;
-    font-size:12px;
-  }
-
-  .hero{
-    padding:55px 18px 65px;
-  }
-
-  .hero h1{
-    font-size:49px;
-    letter-spacing:-2.5px;
-  }
-
-  .hero-subtitle{
-    font-size:17px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .primary-button,
-  .secondary-button{
-    width:100%;
-  }
-
-  .hero-visual{
-    min-height:350px;
-  }
-
-  .visual-circle{
-    width:310px;
-    height:310px;
-  }
-
-  .bulb{
-    width:175px;
-    height:175px;
-    font-size:82px;
-  }
-
-  .floating-card{
-    top:10px;
-    right:0;
-    padding:13px 15px;
-  }
-
-  .floating-card .big{
-    font-size:21px;
-  }
-
-  .energy-card{
-    bottom:5px;
-    left:0;
-    max-width:220px;
-    padding:15px 17px;
-  }
-
-  .energy-card strong{
-    font-size:16px;
-  }
-
-  .energy-card span{
-    font-size:11px;
-  }
-
-  .trust-inner{
-    gap:15px;
-    justify-content:flex-start;
-  }
-
-  .trust-item{
-    font-size:12px;
-  }
-
-  .section{
-    padding:65px 18px;
-  }
-
-  .section-heading h2{
-    font-size:37px;
-  }
-
-  .benefit,
-  .step{
-    padding:26px;
-  }
-
-  .check-box{
-    padding:30px 23px;
-    border-radius:19px;
-    gap:25px;
-  }
-
-  .check-content h2{
-    font-size:38px;
-  }
-
-  .check-content p{
-    font-size:15px;
-  }
-
-  .check-button{
-    width:100%;
-    justify-content:center;
-  }
-
-  .audience-box{
-    padding:35px 20px;
-  }
-
-  .audience h2{
-    font-size:31px;
-  }
-
-  .contact-grid{
-    gap:30px;
-  }
-
-  .footer-inner{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .footer-links{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- HEADER -->
-
-<header>
-<nav class="nav">
-
+<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RH Solutions | Energie voor zelfstandigen & KMO's</title><meta name="description" content="RH Solutions helpt zelfstandigen en KMO's met energie. Bezorg vrijblijvend je energiefactuur en ontdek wat mogelijk is."><meta name="theme-color" content="#009b55"><style>
+:root{--green:#009b55;--green-dark:#007d45;--green-light:#eaf8f1;--green-soft:#f3fbf7;--black:#111111;--dark:#171717;--white:#ffffff;--grey:#66706b;--light-grey:#f5f7f6;--border:#dfe7e3;--shadow:0 20px 60px rgba(0,60,35,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav{max-width:1180px;margin:auto;min-height:78px;padding:0 25px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:48px;height:48px;border-radius:12px;background:var(--black);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;letter-spacing:-2px}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.brand-name span{color:var(--green)}
+.brand-tagline{margin-top:5px;font-size:9px;letter-spacing:3px;color:var(--green);font-weight:700}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:700}
+.nav-links a{text-decoration:none;color:var(--dark)}
+.nav-links a:hover{color:var(--green)}
+.nav-button{text-decoration:none;background:var(--green);color:white;padding:12px 19px;border-radius:8px;font-weight:800;font-size:14px;transition:.2s ease}
+.nav-button:hover{background:var(--green-dark);transform:translateY(-1px)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 90% 20%,rgba(0,155,85,.13),transparent 34%),linear-gradient(135deg,#fff 0%,#fff 58%,#f0faf5 100%);padding:85px 25px 100px}
+.hero:before{content:"";position:absolute;width:480px;height:480px;right:-230px;top:-220px;border:75px solid rgba(0,155,85,.06);border-radius:50%}
+.hero-container{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px;position:relative;z-index:1}
+.hero-content{max-width:680px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;background:var(--green-light);color:var(--green-dark);border-radius:50px;font-size:12px;font-weight:900;letter-spacing:.7px;margin-bottom:22px}
+.eyebrow-dot{width:8px;height:8px;background:var(--green);border-radius:50%}
+.hero h1{font-size:clamp(45px,6vw,78px);line-height:.98;letter-spacing:-3px;margin-bottom:25px}
+.hero h1 span{color:var(--green)}
+.hero-subtitle{font-size:21px;line-height:1.55;color:#4f5753;max-width:620px;margin-bottom:32px}
+.hero-subtitle strong{color:var(--black)}
+.hero-buttons{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-bottom:28px}
+.primary-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--green);color:white;text-decoration:none;padding:16px 24px;border-radius:9px;font-weight:900;font-size:16px;box-shadow:0 12px 30px rgba(0,155,85,.22);transition:.2s ease}
+.primary-button:hover{background:var(--green-dark);transform:translateY(-2px)}
+.secondary-button{display:inline-flex;align-items:center;justify-content:center;background:white;color:var(--black);text-decoration:none;padding:15px 22px;border:1px solid var(--border);border-radius:9px;font-weight:800;font-size:15px;transition:.2s ease}
+.secondary-button:hover{border-color:var(--green);color:var(--green)}
+.hero-note{display:flex;align-items:center;gap:9px;color:#626a66;font-size:13px;font-weight:600}
+.check{width:21px;height:21px;display:flex;align-items:center;justify-content:center;background:var(--green-light);color:var(--green);border-radius:50%;font-size:12px;font-weight:900}
+.hero-visual{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center}
+.visual-circle{position:absolute;width:430px;height:430px;border-radius:50%;background:linear-gradient(145deg,#e6f7ee,#fff);border:1px solid rgba(0,155,85,.13);box-shadow:0 30px 80px rgba(0,60,35,.12)}
+.bulb{position:relative;z-index:2;width:245px;height:245px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#f4fff9 48%,#d9f5e7 100%);display:flex;align-items:center;justify-content:center;font-size:120px;box-shadow:0 20px 60px rgba(0,155,85,.16)}
+.energy-card{position:absolute;z-index:4;bottom:20px;left:0;background:var(--green);color:white;padding:19px 23px;border-radius:13px;box-shadow:0 20px 45px rgba(0,100,55,.24);transform:rotate(-3deg);max-width:280px}
+.energy-card strong{display:block;font-size:20px;line-height:1.1;margin-bottom:5px}
+.energy-card span{font-size:13px;opacity:.92}
+.floating-card{position:absolute;z-index:5;top:45px;right:0;background:var(--black);color:white;padding:18px 21px;border-radius:13px;box-shadow:0 20px 50px rgba(0,0,0,.18);transform:rotate(3deg)}
+.floating-card .small{color:#b9c1bd;font-size:11px;font-weight:700}
+.floating-card .big{color:var(--green);font-size:27px;font-weight:900}
+.trust-bar{background:var(--black);color:white;padding:21px 25px}
+.trust-inner{max-width:1180px;margin:auto;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:30px}
+.trust-item{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700}
+.trust-item span{color:var(--green);font-size:18px}
+.section{padding:90px 25px}
+.section-container{max-width:1180px;margin:auto}
+.section-heading{max-width:720px;margin-bottom:45px}
+.section-heading.center{text-align:center;margin-left:auto;margin-right:auto}
+.section-label{color:var(--green);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.section-heading h2{font-size:clamp(34px,4vw,50px);line-height:1.05;letter-spacing:-1.8px;margin-bottom:14px}
+.section-heading p{color:var(--grey);font-size:17px}
+.benefits{background:var(--light-grey)}
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.benefit{background:white;border:1px solid var(--border);border-radius:18px;padding:32px;box-shadow:0 8px 30px rgba(0,0,0,.035);transition:.2s ease}
+.benefit:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(0,60,35,.09);border-color:rgba(0,155,85,.25)}
+.benefit-icon{width:58px;height:58px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:22px}
+.benefit h3{font-size:21px;margin-bottom:9px}
+.benefit p{color:var(--grey);font-size:15px}
+.check-section{background:white}
+.check-box{position:relative;overflow:hidden;background:linear-gradient(135deg,#007d45,#00a85d);border-radius:25px;padding:55px;color:white;box-shadow:0 25px 70px rgba(0,100,55,.20);display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center}
+.check-box:after{content:"";position:absolute;width:370px;height:370px;right:-170px;top:-180px;border:70px solid rgba(255,255,255,.08);border-radius:50%}
+.check-content{position:relative;z-index:2}
+.check-content .section-label{color:white;opacity:.9}
+.check-content h2{font-size:clamp(35px,4vw,52px);line-height:1.02;letter-spacing:-1.7px;margin-bottom:18px}
+.check-content p{color:rgba(255,255,255,.9);font-size:17px;max-width:620px;margin-bottom:25px}
+.check-button{display:inline-flex;align-items:center;gap:10px;background:white;color:var(--green-dark);padding:16px 24px;border-radius:9px;text-decoration:none;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.check-button:hover{background:#f5fff9}
+.check-points{position:relative;z-index:2;background:rgba(0,0,0,.13);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:27px}
+.check-point{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.check-point:last-child{margin-bottom:0}
+.check-point-icon{flex-shrink:0;width:27px;height:27px;border-radius:50%;background:white;color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
+.check-point strong{display:block;margin-bottom:2px}
+.check-point span{display:block;font-size:13px;color:rgba(255,255,255,.82)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:steps}
+.step{position:relative;background:white;border:1px solid var(--border);border-radius:18px;padding:32px}
+.step-number{width:53px;height:53px;background:var(--black);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;margin-bottom:22px}
+.step h3{font-size:21px;margin-bottom:8px}
+.step p{color:var(--grey);font-size:15px}
+.audience{background:var(--light-grey);text-align:center}
+.audience-box{max-width:900px;margin:auto;background:white;border:2px solid var(--green);border-radius:22px;padding:48px 30px}
+.audience-icon{font-size:45px;margin-bottom:10px}
+.audience h2{font-size:38px;margin-bottom:10px;letter-spacing:-1px}
+.audience h2 span{color:var(--green)}
+.audience p{color:var(--grey);max-width:650px;margin:auto;font-size:16px}
+.contact{background:var(--black);color:white}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.contact h2{font-size:clamp(36px,4vw,52px);line-height:1.05;letter-spacing:-1.5px;margin-bottom:15px}
+.contact h2 span{color:var(--green)}
+.contact-text{color:#b8bfbc;font-size:16px;max-width:570px}
+.contact-card{background:#1d1d1d;border:1px solid #303532;border-radius:18px;padding:30px}
+.contact-row{display:flex;align-items:center;gap:15px;padding:17px 0;border-bottom:1px solid #303532}
+.contact-row:last-child{border-bottom:none;padding-bottom:0}
+.contact-row:first-child{padding-top:0}
+.contact-icon{width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.contact-row small{display:block;color:#929b96;font-size:11px;margin-bottom:2px}
+.contact-row a,.contact-row div{color:white;text-decoration:none;font-weight:800}
+.contact-row a:hover{color:var(--green)}
+footer{background:#080808;color:#7e8782;padding:30px 25px;font-size:13px}
+.footer-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-brand{color:white;font-weight:900;letter-spacing:2px}
+.footer-brand span{color:var(--green)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:#8e9692;text-decoration:none}
+.footer-links a:hover{color:var(--green)}
+@media(max-width:950px){.hero-container{grid-template-columns:1fr;gap:30px}.hero-content{max-width:760px}.hero-visual{min-height:400px}.benefit-grid,.steps{grid-template-columns:1fr}.check-box{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:680px){.nav{min-height:68px;padding:0 17px}.brand-mark{width:42px;height:42px}.brand-name{font-size:18px}.brand-tagline{font-size:7px;letter-spacing:2px}.nav-links{display:none}.nav-button{padding:10px 13px;font-size:12px}.hero{padding:55px 18px 65px}.hero h1{font-size:49px;letter-spacing:-2.5px}.hero-subtitle{font-size:17px}.hero-buttons{flex-direction:column;align-items:stretch}.primary-button,.secondary-button{width:100%}.hero-visual{min-height:350px}.visual-circle{width:310px;height:310px}.bulb{width:175px;height:175px;font-size:82px}.floating-card{top:10px;right:0;padding:13px 15px}.floating-card .big{font-size:21px}.energy-card{bottom:5px;left:0;max-width:220px;padding:15px 17px}.energy-card strong{font-size:16px}.energy-card span{font-size:11px}.trust-inner{gap:15px;justify-content:flex-start}.trust-item{font-size:12px}.section{padding:65px 18px}.section-heading h2{font-size:37px}.benefit,.step{padding:26px}.check-box{padding:30px 23px;border-radius:19px;gap:25px}.check-content h2{font-size:38px}.check-content p{font-size:15px}.check-button{width:100%;justify-content:center}.audience-box{padding:35px 20px}.audience h2{font-size:31px}.contact-grid{gap:30px}.footer-inner{flex-direction:column;text-align:center}.footer-links{flex-wrap:wrap;justify-content:center}}
+</style></head><body>
+<header><nav class="nav">
 <a href="#top" class="brand" aria-label="RH Solutions">
-
 <div class="brand-mark">RH</div>
-
 <div class="brand-text">
-
-<div class="brand-name">
-RH <span>Solutions</span>
+<div class="brand-name">RH <span>Solutions</span></div>
+<div class="brand-tagline">CONNECTING PEOPLE</div>
 </div>
-
-<div class="brand-tagline">
-CONNECTING PEOPLE
-</div>
-
-</div>
-
 </a>
-
 <div class="nav-links">
-
 <a href="#voordelen">Waarom RH Solutions</a>
 <a href="#werkwijze">Hoe werkt het?</a>
 <a href="#contact">Contact</a>
-
 </div>
-
-<a href="#factuur" class="nav-button">
-Factuur uploaden
-</a>
-
-</nav>
-</header>
-
-
-<!-- HERO -->
+<a href="#factuur" class="nav-button">Factuur uploaden</a>
+</nav></header>
 
 <main id="top">
-
 <section class="hero">
-
 <div class="hero-container">
-
 <div class="hero-content">
-
-<div class="eyebrow">
-<span class="eyebrow-dot"></span>
-ENKEL VOOR ZELFSTANDIGEN & KMO'S
-</div>
-
-<h1>
-Minder<br>
-<span>energiekosten.</span><br>
-Meer ruimte<br>
-voor je zaak.
-</h1>
-
-<p class="hero-subtitle">
-Bezorg ons vrijblijvend je huidige energiefactuur.
-We bekijken je situatie en nemen contact met je op.
-<strong>Simpel, persoonlijk en zonder verplichtingen.</strong>
-</p>
-
+<div class="eyebrow"><span class="eyebrow-dot"></span>ENKEL VOOR ZELFSTANDIGEN & KMO'S</div>
+<h1>Minder<br><span>energiekosten.</span><br>Meer ruimte<br>voor je zaak.</h1>
+<p class="hero-subtitle">Bezorg ons vrijblijvend je huidige energiefactuur. We bekijken je situatie en nemen contact met je op. <strong>Simpel, persoonlijk en zonder verplichtingen.</strong></p>
 <div class="hero-buttons">
-
-<a href="#factuur" class="primary-button">
-⚡ Factuur uploaden
-</a>
-
-<a href="#werkwijze" class="secondary-button">
-Hoe werkt het?
-</a>
-
+<a href="#factuur" class="primary-button">⚡ Factuur uploaden</a>
+<a href="#werkwijze" class="secondary-button">Hoe werkt het?</a>
 </div>
-
-<div class="hero-note">
-<span class="check">✓</span>
-Gratis & vrijblijvende analyse
+<div class="hero-note"><span class="check">✓</span>Gratis & vrijblijvende analyse</div>
 </div>
-
-</div>
-
 
 <div class="hero-visual">
-
 <div class="visual-circle"></div>
-
-<div class="bulb">
-💡
+<div class="bulb">💡</div>
+<div class="floating-card"><div class="small">ENERGIECHECK</div><div class="big">GRATIS</div></div>
+<div class="energy-card"><strong>Eén partner voor energie</strong><span>Persoonlijk advies voor zelfstandigen & KMO's.</span></div>
 </div>
-
-<div class="floating-card">
-
-<div class="small">
-ENERGIECHECK
 </div>
-
-<div class="big">
-GRATIS
-</div>
-
-</div>
-
-<div class="energy-card">
-
-<strong>
-Eén partner voor energie
-</strong>
-
-<span>
-Persoonlijk advies voor zelfstandigen & KMO's.
-</span>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- TRUST BAR -->
 
 <section class="trust-bar">
-
 <div class="trust-inner">
-
-<div class="trust-item">
-<span>✓</span>
-Gratis analyse
+<div class="trust-item"><span>✓</span>Gratis analyse</div>
+<div class="trust-item"><span>✓</span>Persoonlijk advies</div>
+<div class="trust-item"><span>✓</span>Enkel voor ondernemers</div>
+<div class="trust-item"><span>✓</span>Vrijblijvend</div>
 </div>
-
-<div class="trust-item">
-<span>✓</span>
-Persoonlijk advies
-</div>
-
-<div class="trust-item">
-<span>✓</span>
-Enkel voor ondernemers
-</div>
-
-<div class="trust-item">
-<span>✓</span>
-Vrijblijvend
-</div>
-
-</div>
-
 </section>
-
-
-<!-- VOORDELEN -->
 
 <section class="section benefits" id="voordelen">
-
 <div class="section-container">
-
 <div class="section-heading center">
-
-<div class="section-label">
-WAAROM RH SOLUTIONS?
+<div class="section-label">WAAROM RH SOLUTIONS?</div>
+<h2>Energie geregeld.<br>Zonder gedoe.</h2>
+<p>We bekijken je huidige situatie en zoeken samen naar een oplossing die past bij jouw onderneming.</p>
 </div>
-
-<h2>
-Energie geregeld.
-<br>
-Zonder gedoe.
-</h2>
-
-<p>
-We bekijken je huidige situatie en zoeken samen naar
-een oplossing die past bij jouw onderneming.
-</p>
-
-</div>
-
-
 <div class="benefit-grid">
-
-<article class="benefit">
-
-<div class="benefit-icon">
-€
+<article class="benefit"><div class="benefit-icon">€</div><h3>Scherpe tarieven</h3><p>Dankzij onze samenwerking met betrouwbare energieleveranciers kunnen we competitieve tarieven aanbieden aan ondernemers.</p></article>
+<article class="benefit"><div class="benefit-icon">✓</div><h3>Gratis analyse</h3><p>Bezorg ons je huidige factuur. We bekijken je energieprijs, verbruik en huidige situatie.</p></article>
+<article class="benefit"><div class="benefit-icon">★</div><h3>Persoonlijk advies</h3><p>Geen standaardverhaal. We bekijken wat relevant is voor jouw zaak en jouw verbruik.</p></article>
 </div>
-
-<h3>
-Scherpe tarieven
-</h3>
-
-<p>
-Dankzij onze samenwerking met betrouwbare
-energieleveranciers kunnen we competitieve tarieven
-aanbieden aan ondernemers.
-</p>
-
-</article>
-
-
-<article class="benefit">
-
-<div class="benefit-icon">
-✓
 </div>
-
-<h3>
-Gratis analyse
-</h3>
-
-<p>
-Bezorg ons je huidige factuur.
-We bekijken je energieprijs, verbruik en huidige situatie.
-</p>
-
-</article>
-
-
-<article class="benefit">
-
-<div class="benefit-icon">
-★
-</div>
-
-<h3>
-Persoonlijk advies
-</h3>
-
-<p>
-Geen standaardverhaal.
-We bekijken wat relevant is voor jouw zaak en jouw verbruik.
-</p>
-
-</article>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- FACTUURCHECK -->
 
 <section class="section check-section" id="factuur">
-
 <div class="section-container">
-
 <div class="check-box">
-
 <div class="check-content">
-
-<div class="section-label">
-GRATIS EN VRIJBLIJVENDE ENERGIECHECK
+<div class="section-label">GRATIS EN VRIJBLIJVENDE ENERGIECHECK</div>
+<h2>Laat je energiefactuur eens bekijken.</h2>
+<p>Upload een recente energiefactuur van je onderneming. We bekijken je huidige situatie en nemen daarna contact met je op.</p>
+<a href="#uploadformulier" class="check-button">📄 Factuur uploaden</a>
 </div>
-
-<h2>
-Laat je energiefactuur eens bekijken.
-</h2>
-
-<p>
-Upload een recente energiefactuur van je onderneming.
-We bekijken je huidige situatie en nemen daarna
-contact met je op.
-</p>
-
-<a href="#uploadformulier" class="check-button">
-📄 Factuur uploaden
-</a>
-
-</div>
-
-
 <div class="check-points">
-
-<div class="check-point">
-
-<div class="check-point-icon">
-1
+<div class="check-point"><div class="check-point-icon">1</div><div><strong>Upload je factuur</strong><span>PDF, JPG, JPEG of PNG.</span></div></div>
+<div class="check-point"><div class="check-point-icon">2</div><div><strong>Wij bekijken je situatie</strong><span>We bekijken je energiegegevens.</span></div></div>
+<div class="check-point"><div class="check-point-icon">3</div><div><strong>We nemen contact op</strong><span>Je ontvangt persoonlijk advies.</span></div></div>
 </div>
-
-<div>
-
-<strong>
-Upload je document
-</strong>
-
-<span>
-Kies het bestand dat je wilt meesturen.
-</span>
-
 </div>
-
 </div>
-
-
-<div class="check-point">
-
-<div class="check-point-icon">
-2
-</div>
-
-<div>
-
-<strong>
-Wij bekijken je situatie
-</strong>
-
-<span>
-We bekijken de informatie.
-</span>
-
-</div>
-
-</div>
-
-
-<div class="check-point">
-
-<div class="check-point-icon">
-3
-</div>
-
-<div>
-
-<strong>
-We nemen contact op
-</strong>
-
-<span>
-Je ontvangt persoonlijk advies.
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- UPLOAD FORMULIER -->
-
-<section class="section" id="uploadformulier">
-
+<section class="section" id="uploadformulier" style="background:#f5f7f6;">
 <div class="section-container" style="max-width:760px;">
-
 <div class="section-heading center">
-
-<div class="section-label">
-JOUW ENERGIECHECK
+<div class="section-label">JOUW ENERGIECHECK</div>
+<h2>Bezorg ons je factuur</h2>
+<p>Enkel voor zelfstandigen en ondernemingen. Vul je gegevens in en voeg één recente energiefactuur toe.</p>
 </div>
 
-<h2>
-Bezorg ons je factuur
-</h2>
+<form id="energyForm" action="https://formsubmit.co/contact@rhsolutions.info" method="POST" enctype="multipart/form-data" style="background:white;padding:32px;border-radius:20px;border:1px solid #dfe7e3;box-shadow:0 15px 45px rgba(0,60,35,.08);">
 
-<p>
-Enkel voor zelfstandigen en ondernemingen.
-Vul je gegevens in en voeg je document toe.
-</p>
+<input type="hidden" name="_subject" value="Nieuwe energiecheck - RH Solutions">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="https://rhsolutions.info/bedankt.html">
+<input type="hidden" name="_url" value="https://rhsolutions.info/">
 
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none;position:absolute;left:-9999px;">
+
+<div style="margin-bottom:18px;">
+<label for="naam" style="display:block;font-weight:800;margin-bottom:7px;">Voornaam en naam <span style="color:#009b55;">*</span></label>
+<input id="naam" name="Naam" type="text" autocomplete="name" required placeholder="Jan Janssens" style="width:100%;padding:14px;border:1px solid #dfe7e3;border-radius:9px;font-size:16px;outline:none;">
 </div>
 
-
-<form
-id="energyForm"
-action="https://formsubmit.co/contact@rhsolutions.info"
-method="POST"
-enctype="multipart/form-data"
->
-
-<!-- FORMSUBMIT -->
-
-<input
-type="hidden"
-name="_subject"
-value="Nieuwe energiecheck - RH Solutions"
->
-
-<input
-type="hidden"
-name="_template"
-value="table"
->
-
-<input
-type="hidden"
-name="_captcha"
-value="true"
->
-
-<input
-type="hidden"
-name="_next"
-value="https://rhsolutions.info/bedankt.html"
->
-
-<input
-type="hidden"
-name="_url"
-value="https://rhsolutions.info/"
->
-
-<!-- HONEYPOT -->
-
-<input
-type="text"
-name="_honey"
-tabindex="-1"
-autocomplete="off"
-style="display:none;position:absolute;left:-9999px;"
->
-
-
-<!-- NAAM -->
-
-<div class="form-field">
-
-<label class="form-label" for="naam">
-Voornaam en naam
-<span>*</span>
-</label>
-
-<input
-id="naam"
-name="Naam"
-type="text"
-autocomplete="name"
-required
-placeholder="Jan Janssens"
-class="form-input"
->
-
+<div style="margin-bottom:18px;">
+<label for="bedrijf" style="display:block;font-weight:800;margin-bottom:7px;">Bedrijfsnaam <span style="color:#009b55;">*</span></label>
+<input id="bedrijf" name="Bedrijfsnaam" type="text" autocomplete="organization" required placeholder="Janssens BV" style="width:100%;padding:14px;border:1px solid #dfe7e3;border-radius:9px;font-size:16px;outline:none;">
 </div>
 
-
-<!-- BEDRIJF -->
-
-<div class="form-field">
-
-<label class="form-label" for="bedrijf">
-Bedrijfsnaam
-<span>*</span>
-</label>
-
-<input
-id="bedrijf"
-name="Bedrijfsnaam"
-type="text"
-autocomplete="organization"
-required
-placeholder="Janssens BV"
-class="form-input"
->
-
+<div style="margin-bottom:18px;">
+<label for="email" style="display:block;font-weight:800;margin-bottom:7px;">E-mailadres <span style="color:#009b55;">*</span></label>
+<input id="email" name="email" type="email" autocomplete="email" required placeholder="jan@bedrijf.be" style="width:100%;padding:14px;border:1px solid #dfe7e3;border-radius:9px;font-size:16px;outline:none;">
 </div>
 
-
-<!-- EMAIL -->
-
-<div class="form-field">
-
-<label class="form-label" for="email">
-E-mailadres
-<span>*</span>
-</label>
-
-<input
-id="email"
-name="email"
-type="email"
-autocomplete="email"
-required
-placeholder="jan@bedrijf.be"
-class="form-input"
->
-
+<div style="margin-bottom:18px;">
+<label for="telefoon" style="display:block;font-weight:800;margin-bottom:7px;">Telefoonnummer <span style="color:#009b55;">*</span></label>
+<input id="telefoon" name="Telefoon" type="tel" autocomplete="tel" required placeholder="0470 12 34 56" style="width:100%;padding:14px;border:1px solid #dfe7e3;border-radius:9px;font-size:16px;outline:none;">
 </div>
 
-
-<!-- TELEFOON -->
-
-<div class="form-field">
-
-<label class="form-label" for="telefoon">
-Telefoonnummer
-<span>*</span>
-</label>
+<div style="margin-bottom:18px;">
+<label for="factuurFile" style="display:block;font-weight:800;margin-bottom:7px;">Energiefactuur <span style="color:#009b55;">*</span></label>
 
 <input
-id="telefoon"
-name="Telefoon"
-type="tel"
-autocomplete="tel"
-required
-placeholder="0470 12 34 56"
-class="form-input"
->
-
-</div>
-
-
-<!-- BESTAND -->
-
-<div class="form-field">
-
-<label class="form-label" for="factuur">
-Energiefactuur
-<span>*</span>
-</label>
-
-<input
-id="factuur"
+id="factuurFile"
 name="Energiefactuur"
 type="file"
 required
-class="form-file"
+style="width:100%;padding:11px;border:1px solid #dfe7e3;border-radius:9px;font-size:14px;background:#fafcfa;"
 >
 
-<div id="fileMessage" class="file-message">
-Kies je bestand. Het bestand wordt meegestuurd met je aanvraag.
+<div id="fileMessage" style="margin-top:7px;color:#66706b;font-size:12px;">
+PDF, JPG, JPEG of PNG — maximaal 10 MB.
+</div>
 </div>
 
+<div style="margin-bottom:18px;">
+<label for="opmerking" style="display:block;font-weight:800;margin-bottom:7px;">
+Opmerking <span style="font-weight:400;color:#777;">(optioneel)</span>
+</label>
+<textarea id="opmerking" name="Opmerking" rows="4" placeholder="Heb je momenteel een contract bij een bepaalde leverancier? Laat het hier weten." style="width:100%;padding:14px;border:1px solid #dfe7e3;border-radius:9px;font-size:16px;font-family:inherit;resize:vertical;"></textarea>
 </div>
 
-
-<!-- OPMERKING -->
-
-<div class="form-field">
-
-<label class="form-label" for="opmerking">
-Opmerking
-<span style="font-weight:400;color:#777;">
-(optioneel)
-</span>
+<label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#59625e;margin-bottom:22px;">
+<input type="checkbox" name="Akkoord" value="Ja" required style="margin-top:3px;accent-color:#009b55;flex-shrink:0;">
+<span>Ik vraag vrijwillig een energiecheck aan en geef toestemming om mijn gegevens te gebruiken om contact met mij op te nemen over deze aanvraag.</span>
 </label>
 
-<textarea
-id="opmerking"
-name="Opmerking"
-rows="4"
-class="form-textarea"
-placeholder="Heb je momenteel een contract bij een bepaalde leverancier? Laat het hier weten."
-></textarea>
-
-</div>
-
-
-<!-- TOESTEMMING -->
-
-<label class="consent">
-
-<input
-type="checkbox"
-name="Akkoord"
-value="Ja"
-required
->
-
-<span>
-Ik vraag vrijwillig een energiecheck aan en geef
-toestemming om mijn gegevens te gebruiken om
-contact met mij op te nemen over deze aanvraag.
-</span>
-
-</label>
-
-
-<!-- BUTTON -->
-
-<button
-type="submit"
-class="submit-button"
->
+<button type="submit" style="width:100%;border:0;background:#009b55;color:white;padding:17px;border-radius:9px;font-size:17px;font-weight:900;cursor:pointer;transition:.2s ease;">
 ⚡ FACTUUR VERSTUREN
 </button>
 
-<p class="form-note">
-Upload je document. Het gekozen bestand wordt meegestuurd met je aanvraag.
+<p style="text-align:center;color:#7a827e;font-size:11px;margin-top:14px;line-height:1.5;">
+Upload uitsluitend je energiefactuur. Bezorg geen identiteitskaarten, bankkaarten of andere documenten die niet nodig zijn voor de energiecheck.
 </p>
 
 </form>
-
 </div>
-
 </section>
-
-
-<!-- STAPPENPLAN -->
 
 <section class="section" id="werkwijze">
-
 <div class="section-container">
-
 <div class="section-heading center">
-
-<div class="section-label">
-HOE WERKT HET?
+<div class="section-label">HOE WERKT HET?</div>
+<h2>Drie simpele stappen.</h2>
+<p>Geen ingewikkelde procedure. Gewoon je factuur bezorgen en wij doen de rest.</p>
 </div>
-
-<h2>
-Drie simpele stappen.
-</h2>
-
-<p>
-Geen ingewikkelde procedure.
-Gewoon je factuur bezorgen en wij doen de rest.
-</p>
-
-</div>
-
 
 <div class="steps">
-
 <article class="step">
-
-<div class="step-number">
-01
-</div>
-
-<h3>
-Bezorg je factuur
-</h3>
-
-<p>
-Upload een recente energiefactuur
-van je onderneming via onze website.
-</p>
-
+<div class="step-number">01</div>
+<h3>Bezorg je factuur</h3>
+<p>Upload een recente energiefactuur van je onderneming via onze website.</p>
 </article>
 
-
 <article class="step">
-
-<div class="step-number">
-02
-</div>
-
-<h3>
-Wij bekijken ze
-</h3>
-
-<p>
-We bekijken de informatie op je factuur
-en je huidige energiesituatie.
-</p>
-
+<div class="step-number">02</div>
+<h3>Wij bekijken ze</h3>
+<p>We bekijken de informatie op je factuur en je huidige energiesituatie.</p>
 </article>
 
-
 <article class="step">
-
-<div class="step-number">
-03
-</div>
-
-<h3>
-Persoonlijk advies
-</h3>
-
-<p>
-We nemen contact met je op en bespreken
-samen de mogelijkheden.
-</p>
-
+<div class="step-number">03</div>
+<h3>Persoonlijk advies</h3>
+<p>We nemen contact met je op en bespreken samen de mogelijkheden.</p>
 </article>
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ONDERNEMERS -->
 
 <section class="section audience">
-
 <div class="section-container">
-
 <div class="audience-box">
-
-<div class="audience-icon">
-👔
+<div class="audience-icon">👔</div>
+<h2>Voor <span>zelfstandigen</span> en KMO's.</h2>
+<p>RH Solutions richt deze energiecheck op zelfstandigen en ondernemingen. We bekijken je energie als ondernemer, met aandacht voor je verbruik en je zaak.</p>
 </div>
-
-<h2>
-Voor <span>zelfstandigen</span>
-en KMO's.
-</h2>
-
-<p>
-RH Solutions richt deze energiecheck op
-zelfstandigen en ondernemingen.
-We bekijken je energie als ondernemer,
-met aandacht voor je verbruik en je zaak.
-</p>
-
 </div>
-
-</div>
-
 </section>
 
-
-<!-- CONTACT -->
-
 <section class="section contact" id="contact">
-
 <div class="section-container">
-
 <div class="contact-grid">
 
 <div>
-
-<div class="section-label">
-RH SOLUTIONS
+<div class="section-label">RH SOLUTIONS</div>
+<h2>Minder energiekosten, <span>meer ruimte</span> voor je zaak.</h2>
+<p class="contact-text">Heb je vragen over je energiefactuur, energiecontract of energie voor je onderneming? Neem gerust contact met ons op.</p>
 </div>
-
-<h2>
-Minder energiekosten,
-<span>meer ruimte</span>
-voor je zaak.
-</h2>
-
-<p class="contact-text">
-Heb je vragen over je energiefactuur,
-energiecontract of energie voor je onderneming?
-Neem gerust contact met ons op.
-</p>
-
-</div>
-
 
 <div class="contact-card">
 
 <div class="contact-row">
-
-<div class="contact-icon">
-☎
-</div>
-
+<div class="contact-icon">☎</div>
 <div>
-
-<small>
-TELEFOON
-</small>
-
-<a href="tel:+32456721892">
-+32 456 72 18 92
-</a>
-
+<small>TELEFOON</small>
+<a href="tel:+32456721892">+32 456 72 18 92</a>
 </div>
-
 </div>
-
 
 <div class="contact-row">
-
-<div class="contact-icon">
-@
-</div>
-
+<div class="contact-icon">@</div>
 <div>
-
-<small>
-E-MAIL
-</small>
-
-<a href="mailto:contact@rhsolutions.info">
-contact@rhsolutions.info
-</a>
-
+<small>E-MAIL</small>
+<a href="mailto:contact@rhsolutions.info">contact@rhsolutions.info</a>
 </div>
-
 </div>
-
 
 <div class="contact-row">
-
-<div class="contact-icon">
-⚡
-</div>
-
+<div class="contact-icon">⚡</div>
 <div>
-
-<small>
-DIENST
-</small>
-
-<div>
-Energie & telecom voor ondernemers
+<small>DIENST</small>
+<div>Energie & telecom voor ondernemers</div>
+</div>
 </div>
 
 </div>
-
 </div>
-
 </div>
-
-</div>
-
-</div>
-
 </section>
-
 </main>
 
-
-<!-- FOOTER -->
-
 <footer>
-
 <div class="footer-inner">
-
 <div>
-
-<div class="footer-brand">
-RH <span>SOLUTIONS</span>
+<div class="footer-brand">RH <span>SOLUTIONS</span></div>
+<div style="margin-top:5px;">Connecting people</div>
 </div>
-
-<div style="margin-top:5px;">
-Connecting people
-</div>
-
-</div>
-
 
 <div class="footer-links">
-
-<a href="#top">
-Home
-</a>
-
-<a href="#factuur">
-Factuurcheck
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
-<a href="privacy.html">
-Privacy
-</a>
-
+<a href="#top">Home</a>
+<a href="#factuur">Factuurcheck</a>
+<a href="#contact">Contact</a>
+<a href="privacy.html">Privacy</a>
 </div>
 
-
-<div>
-© 2026 RH Solutions
+<div>© 2026 RH Solutions</div>
 </div>
-
-</div>
-
 </footer>
 
-
-<!-- UPLOAD VALIDATIE -->
-
 <script>
-
-const form =
-document.getElementById("energyForm");
-
-const fileInput =
-document.getElementById("factuur");
-
-const fileMessage =
-document.getElementById("fileMessage");
-
-
-/*
-  BELANGRIJK:
-
-  Er wordt GEEN bestandstype gecontroleerd.
-
-  Dus:
-  PDF       ✓
-  JPG       ✓
-  JPEG      ✓
-  PNG       ✓
-  Word      ✓
-  Excel     ✓
-  ZIP       ✓
-  TXT       ✓
-  enzovoort ✓
-
-  Het enige wat gecontroleerd wordt:
-  er moet één bestand geselecteerd zijn.
-*/
-
+const form=document.getElementById("energyForm");
+const fileInput=document.getElementById("factuurFile");
+const fileMessage=document.getElementById("fileMessage");
 
 function validateFile(){
+const files=fileInput.files;
 
-  const files =
-  fileInput.files;
-
-
-  if(!files || files.length === 0){
-
-    fileMessage.textContent =
-    "Kies een bestand.";
-
-    fileMessage.style.color =
-    "#b00020";
-
-    return false;
-  }
-
-
-  if(files.length > 1){
-
-    fileMessage.textContent =
-    "Upload slechts één bestand.";
-
-    fileMessage.style.color =
-    "#b00020";
-
-    return false;
-  }
-
-
-  const file =
-  files[0];
-
-
-  fileMessage.textContent =
-  "✓ " + file.name + " geselecteerd";
-
-  fileMessage.style.color =
-  "#009b55";
-
-
-  return true;
+if(!files||files.length===0){
+fileMessage.textContent="Kies een bestand.";
+fileMessage.style.color="#b00020";
+return false;
 }
 
+if(files.length>1){
+fileMessage.textContent="Upload slechts één bestand.";
+fileMessage.style.color="#b00020";
+return false;
+}
 
-/*
-  Zodra de gebruiker een bestand kiest,
-  tonen we meteen de bestandsnaam.
-*/
+fileMessage.textContent="✓ "+files[0].name+" geselecteerd";
+fileMessage.style.color="#009b55";
+return true;
+}
 
-fileInput.addEventListener(
-"change",
-validateFile
-);
+fileInput.addEventListener("change",validateFile);
 
+form.addEventListener("submit",function(event){
+if(!validateFile()){
+event.preventDefault();
+return;
+}
 
-/*
-  Bij verzenden controleren we alleen
-  of er effectief een bestand aanwezig is.
-*/
-
-form.addEventListener(
-"submit",
-function(event){
-
-  if(!validateFile()){
-
-    event.preventDefault();
-
-    fileInput.focus();
-
-    return;
-  }
-
-
-  const button =
-  form.querySelector(
-    'button[type="submit"]'
-  );
-
-
-  button.disabled =
-  true;
-
-
-  button.textContent =
-  "⏳ Bestand wordt verzonden...";
-
-
-  button.style.opacity =
-  "0.75";
-
+const button=form.querySelector('button[type="submit"]');
+button.disabled=true;
+button.textContent="⏳ Bestand wordt verzonden...";
+button.style.opacity=".75";
 });
-
 </script>
 
 </body>
