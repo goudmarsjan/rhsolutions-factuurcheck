@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gratis Energiecheck | RH Solutions</title>
+
+  <meta
+    name="description"
+    content="Laat als zelfstandige of onderneming vrijblijvend je energiefactuur controleren door RH Solutions."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f1e8;
+      color: #171717;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #111111;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #d7a83d;
+    }
+
+    .header-contact {
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .hero {
+      min-height: 430px;
+      padding: 70px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(215,168,61,.25), transparent 30%),
+        #f5f1e8;
+    }
+
+    .hero-text {
+      max-width: 680px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #111;
+      color: #d7a83d;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: #b88b23;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 620px;
+      color: #4a4a4a;
+      margin-bottom: 28px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .hero-button:hover {
+      background: #292929;
+    }
+
+    .hero-icon {
+      min-width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.18);
+    }
+
+    .section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .steps {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+    }
+
+    .step-number {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #d7a83d;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .step p {
+      color: #666;
+    }
+
+    .form-section {
+      background: #111;
+      color: white;
+      padding: 75px 7%;
+    }
+
+    .form-container {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .form-intro {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 35px;
+    }
+
+    form {
+      background: white;
+      color: #111;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 9px;
+      padding: 13px;
+      font-size: 16px;
+      font-family: inherit;
+      background: #fafafa;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #d7a83d;
+      box-shadow: 0 0 0 3px rgba(215,168,61,.15);
+    }
+
+    input[type="file"] {
+      background: white;
+      padding: 11px;
+    }
+
+    .file-help {
+      font-size: 12px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .required {
+      color: #b00020;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 10px 0 20px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 4px;
+    }
+
+    .submit-button {
+      width: 100%;
+      border: none;
+      background: #d7a83d;
+      color: #111;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background: #c3952d;
+    }
+
+    .notice {
+      max-width: 760px;
+      margin: 25px auto 0;
+      padding: 18px;
+      border-radius: 12px;
+      background: rgba(215,168,61,.12);
+      border: 1px solid rgba(215,168,61,.3);
+      color: #eee;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #080808;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: #d7a83d;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      .header-contact {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-icon {
+        align-self: center;
+        min-width: 170px;
+        width: 170px;
+        height: 170px;
+        font-size: 70px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      form {
+        padding: 23px;
+      }
+
+      .form-container h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    RH <span>SOLUTIONS</span>
+  </div>
+
+  <div class="header-contact">
+    Energie & telecom voor zelfstandigen
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="badge">
+      ⚡ ENKEL VOOR ZELFSTANDIGEN & ONDERNEMINGEN
+    </div>
+
+    <h1>
+      Betaal jij niet<br>
+      <span>te veel</span> voor energie?
+    </h1>
+
+    <p>
+      Upload vrijblijvend je huidige energiefactuur.
+      Wij bekijken je huidige contract en energieprijzen
+      en nemen daarna contact met je op.
+    </p>
+
+    <a href="#factuur" class="hero-button">
+      📄 Mijn factuur laten controleren
+    </a>
+
+  </div>
+
+  <div class="hero-icon">
+    ⚡
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>Hoe werkt het?</h2>
+    <p>In drie eenvoudige stappen.</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">1</div>
+
+      <h3>Upload je factuur</h3>
+
+      <p>
+        Bezorg ons een recente energiefactuur
+        van je onderneming.
+      </p>
+    </div>
+
+
+    <div class="step">
+      <div class="step-number">2</div>
+
+      <h3>Wij bekijken ze</h3>
+
+      <p>
+        We bekijken onder andere je energieprijs,
+        verbruik en contractgegevens.
+      </p>
+    </div>
+
+
+    <div class="step">
+      <div class="step-number">3</div>
+
+      <h3>We nemen contact op</h3>
+
+      <p>
+        Indien er mogelijkheden zijn,
+        bespreken we die vrijblijvend met jou.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="form-section" id="factuur">
+
+  <div class="form-container">
+
+    <h2>Gratis energiecheck</h2>
+
+    <p class="form-intro">
+      Vul je gegevens in en upload je energiefactuur.
+      Wij ontvangen je aanvraag rechtstreeks.
+    </p>
+
+
+    <!--
+      FORMSUBMIT
+      Dit formulier stuurt de aanvraag naar:
+      contact@rhsolutions.info
+
+      De eerste keer dat iemand het formulier gebruikt,
+      krijg je een activatiemail van FormSubmit.
+    -->
+
+    <form
+      action="https://formsubmit.co/contact@rhsolutions.info"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+
+      <!-- E-mailinstellingen -->
+
+      <input
+        type="hidden"
+        name="_subject"
+        value="Nieuwe energiecheck - RH Solutions"
+      >
+
+      <input
+        type="hidden"
+        name="_template"
+        value="table"
+      >
+
+      <input
+        type="hidden"
+        name="_captcha"
+        value="true"
+      >
+
+      <input
+        type="hidden"
+        name="_next"
+        value="https://goudmarsjan.github.io/rhsolutions-factuurcheck/bedankt.html"
+      >
+
+      <input
+        type="hidden"
+        name="_url"
+        value="https://goudmarsjan.github.io/rhsolutions-factuurcheck/"
+      >
+
+
+      <!-- Honeypot tegen spam -->
+
+      <input
+        type="text"
+        name="_honey"
+        style="display:none"
+        tabindex="-1"
+        autocomplete="off"
+      >
+
+
+      <div class="grid">
+
+        <div class="field">
+          <label for="naam">
+            Voornaam en naam <span class="required">*</span>
+          </label>
+
+          <input
+            id="naam"
+            type="text"
+            name="Naam"
+            placeholder="Jan Janssens"
+            required
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="bedrijf">
+            Bedrijfsnaam <span class="required">*</span>
+          </label>
+
+          <input
+            id="bedrijf"
+            type="text"
+            name="Bedrijfsnaam"
+            placeholder="Janssens BV"
+            required
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="email">
+            E-mailadres <span class="required">*</span>
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="jan@bedrijf.be"
+            required
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="telefoon">
+            Telefoonnummer <span class="required">*</span>
+          </label>
+
+          <input
+            id="telefoon"
+            type="tel"
+            name="Telefoon"
+            placeholder="0470 12 34 56"
+            required
+          >
+        </div>
+
+
+        <div class="field full">
+
+          <label for="factuur">
+            Energiefactuur <span class="required">*</span>
+          </label>
+
+          <input
+            id="factuur"
+            type="file"
+            name="Energiefactuur"
+            accept=".pdf,.jpg,.jpeg,.png"
+            required
+          >
+
+          <div class="file-help">
+            PDF, JPG, JPEG of PNG — maximaal 10 MB.
+          </div>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label for="opmerking">
+            Eventuele opmerking
+          </label>
+
+          <textarea
+            id="opmerking"
+            name="Opmerking"
+            rows="4"
+            placeholder="Bijvoorbeeld: ik heb momenteel een contract bij Luminus..."
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <label class="consent">
+
+        <input
+          type="checkbox"
+          name="Akkoord"
+          value="Ja"
+          required
+        >
+
+        <span>
+          Ik vraag vrijwillig een energiecheck aan en geef toestemming
+          om mijn gegevens te gebruiken om contact met mij op te nemen
+          over deze aanvraag.
+        </span>
+
+      </label>
+
+
+      <button
+        type="submit"
+        class="submit-button"
+      >
+        ⚡ FACTUUR VERSTUREN
+      </button>
+
+    </form>
+
+
+    <div class="notice">
+      🔒 <strong>Privé en vrijblijvend.</strong>
+      Deze pagina is uitsluitend bedoeld voor zelfstandigen
+      en ondernemingen. Na ontvangst bekijken wij je aanvraag
+      en nemen we contact met je op.
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <strong>RH SOLUTIONS</strong><br>
+
+  Energie & telecom voor zelfstandigen
+
+  <br><br>
+
+  contact@rhsolutions.info
+
+</footer>
+
+</body>
+</html>
